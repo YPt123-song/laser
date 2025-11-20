@@ -1,0 +1,22 @@
+# Ultralytics  AGPL-3.0 License - https://ultralytics.com/license
+# Default Ultralytics settings for ByteTrack tracker when using mode="track"
+# For documentation and examples see https://docs.ultralytics.com/modes/track/
+# For ByteTrack source code see https://github.com/ifzhang/ByteTrack
+
+tracker_type: bytetrack        # tracker type, ['botsort', 'bytetrack']
+
+# 关联相关阈值
+track_high_thresh: 0.25        # 第一次关联时的置信度阈值
+track_low_thresh: 0.10         # 第二次关联时的置信度阈值
+new_track_thresh: 0.25         # 未匹配到任何轨迹时，创建新轨迹的置信度阈值
+
+track_buffer: 30               # 轨迹丢失多少帧后才删除（缓冲长度，单位：帧）
+match_thresh: 0.80             # 轨迹与检测框匹配时的 IoU 阈值
+
+fuse_score: True               # 是否在匹配前将置信度分数与 IoU 距离融合
+
+# 若想过滤特别小的框，可打开并调整（像素面积阈值）
+# min_box_area: 10             # tracker 评测时用，一般实际应用可以不管
+
+# MOT20 数据集专用（一般不用）
+# mot20: False
